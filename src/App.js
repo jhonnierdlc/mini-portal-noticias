@@ -8,6 +8,7 @@ import {Noticias} from './components/Paginas/Noticias'
 import { LogoutButton } from "./components/Paginas/CerrarSesion";
 import { Navbar } from './components/UI/Navbar';
 import {Clima} from './components/Paginas/Clima';
+import { Component } from 'react';
 
 
 
@@ -16,7 +17,6 @@ import {Clima} from './components/Paginas/Clima';
 function App() {
 
   const { isAuthenticated } = useAuth0();
-
 
   return (
     

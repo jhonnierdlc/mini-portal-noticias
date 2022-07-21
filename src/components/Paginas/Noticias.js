@@ -1,26 +1,23 @@
 import { Container } from "@mui/material";
 import React, { useState, useEffect,useRef } from "react";
-import {axios} from 'axios';
+import {Axios, axios} from 'axios';
 import { Card, Button } from "antd";
+import { Components } from "antd/lib/date-picker/generatePicker";
 const { Meta } = Card;
 
 
 export const Noticias = () => {
     
-    const [news, setNews] = useState([]);
+    const[articles,setArticles]=useState([]);
 
-  useEffect(() => {
-    const loadNews = async () => {
-      const response = await axios.get(
-        "https://newsapi.org/v2/top-headlines?country=co&apiKey=b4cd59bba9a0433aadec266ce62d7133"
-      );
-      setNews(response.data.articles);
-    };
-    loadNews();
-  }, []);
+    useEffect(()=>{
+      const getArticles= async ()=>{
+        const res=await Axios.get("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b4cd59bba9a0433aadec266ce62d7133");
 
-  console.log("news", news);
-    
+        console.log(res);
+      }
+      getArticles();
+    })
     
     return (
         <>
