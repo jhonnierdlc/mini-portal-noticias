@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import React, {useEffect, useState,useRef} from "react";
-
+import "../css/clima.css";
 
 export const Clima = () => {
 
@@ -35,6 +35,15 @@ useEffect(()=>{
 
     return(
         <>
+        {!todos ? 'Cargando...':todos.map((todos,index)=>{
+                        return <div className="clima-izq">
+                            
+                            <p>{todos.name_city}, <strong>{todos.temperatura}</strong></p>
+
+                        </div>
+                    })}
+
+
         <h4>Climas</h4>
         
         <div className="Climas">
