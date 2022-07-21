@@ -7,6 +7,7 @@ import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import {Noticias} from './components/Paginas/Noticias' 
 import { LogoutButton } from "./components/Paginas/CerrarSesion";
 import { Navbar } from './components/UI/Navbar';
+import {Clima} from './components/Paginas/Clima';
 
 
 
@@ -26,6 +27,8 @@ function App() {
         <>
           <Navbar />
           <Noticias />
+          <hr></hr>
+          <Clima/>
         </>
       ) : (
         <LoginButton />

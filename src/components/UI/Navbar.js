@@ -25,11 +25,9 @@ export const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav mx-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="#"><strong>Noticias</strong></a>
+                                <a className="nav-link" href="#"><strong>News Noticias</strong></a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#"><strong>Clima</strong></a>
-                            </li>
+                            
                         </ul>
                         <img src={user.picture} width="40px"  alt={user.name} />
                         <h6>{user.name}</h6>
