@@ -1,9 +1,7 @@
 import { Container } from "@mui/material";
 import React, { useState, useEffect,useRef } from "react";
-import {Axios, axios} from 'axios';
-import { Card, Button } from "antd";
-import { Components } from "antd/lib/date-picker/generatePicker";
-const { Meta } = Card;
+import {Axios} from 'axios';
+
 
 
 export const Noticias = () => {
