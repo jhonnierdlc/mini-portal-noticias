@@ -1,12 +1,31 @@
-import React from 'react'
+import { Container } from "@mui/material";
+import React, { useState, useEffect,useRef } from "react";
+import {axios} from 'axios';
+import { Card, Button } from "antd";
+const { Meta } = Card;
 
-
-import '../css/navbar.css'
 
 export const Noticias = () => {
+    
+    const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    const loadNews = async () => {
+      const response = await axios.get(
+        "https://newsapi.org/v2/top-headlines?country=co&apiKey=b4cd59bba9a0433aadec266ce62d7133"
+      );
+      setNews(response.data.articles);
+    };
+    loadNews();
+  }, []);
+
+  console.log("news", news);
+    
+    
     return (
-        <div>
-            <h1>Noticias</h1>
-        </div>
+        <>
+          <h2>Noticias</h2>
+        </>
+
     )
 }

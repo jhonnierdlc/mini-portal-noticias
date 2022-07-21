@@ -1,20 +1,37 @@
 
+import {useAuth0} from '@auth0/auth0-react'
+import { LoginButton } from "./components/Paginas/InicioSesion";
+import {Inicio} from "./components/Paginas/Inicio";
 import './App.css';
-import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import { InicioSesion } from './components/Paginas/InicioSesion';
-import { Navbar } from '../src/components/UI/Navbar';
-import Inicio from './components/Paginas/Inicio';
+import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
+import {Noticias} from './components/Paginas/Noticias' 
+import { LogoutButton } from "./components/Paginas/CerrarSesion";
+import { Navbar } from './components/UI/Navbar';
 
-import {Noticias} from '../src/components/Paginas/Noticias';
+
+
 
 
 function App() {
+
+  const { isAuthenticated } = useAuth0();
+
+
   return (
+    
     <div className="App">
-      <InicioSesion/>
-
-
-    </div>
+    
+      
+      {isAuthenticated ? (
+        <>
+          <Navbar />
+          <Noticias />
+        </>
+      ) : (
+        <LoginButton />
+      )}
+    
+  </div>
   );
 }
 
